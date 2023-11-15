@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8324910318186821865}
   - component: {fileID: -7725069330736782105}
   - component: {fileID: 8576771475384556813}
+  - component: {fileID: 1022885492972770669}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -61,6 +62,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestruction: 8
+--- !u!114 &1022885492972770669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324910318186821867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f320352405e2f4e4d9a6b1159c9de05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8324910318530916343
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,19 +7,34 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [Header("Game Controller Object for controlling the game")]
-    public GameController gameController;
-
+    [Header("Game Over UI Object for displaying Game Over Screen")]
+    public GameObject gameOverCanvas;
+    [Header("Score UI Object for displaying Score")]
+    public GameObject scoreCanvas;
+    [Header("Spawner Objeect for spawning objects in game")]
+    public GameObject spawner;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+        scoreCanvas.SetActive(true);
+            gameOverCanvas.SetActive(false);
+        spawner.SetActive(true);
 
     }
 
     // Update is called once per frame
-    void Update()
+    void GameOver()
     {
+        gameOverCanvas.gameObject.SetActive(true);
+        spawner.SetActive(false);
+        Time.timeScale = 0;
+    }
 
+
+    void OnCollisionEnter2D()
+    {
+        GameObject.Find("GameController").GetComponent<GameController>().GameOver();
     }
 }
 
