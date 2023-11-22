@@ -18,26 +18,14 @@ public class PlayerControls : MonoBehaviour
         Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
         objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
-
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    // Update is called once per frame
+    void Update()
     {
-        if (collision.gameObject.tag == "HighSpike" || collision.gameObject.tag == "LowSpike" || collision.gameObject.tag == "Ground")
+        if(Input.GetMouseButtonDown(0))
         {
-            Time.timeScale = 0;
+            rb.velocity = Vector2.up * velocity;
         }
     }
-    void Update() {
-        if (Input.GetMouseButtonDown(0))
-        { rb.velocity = Vector2.up * velocity;
-
-
-
-        }
-    }
-        
-
-    }
-
-//Game manager object
-
+}
