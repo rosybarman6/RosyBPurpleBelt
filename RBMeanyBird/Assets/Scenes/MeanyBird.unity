@@ -251,6 +251,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &630389266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5669031248249767612, guid: 1fbc2b56f4b4cad41b29960ac8b40776, type: 3}
+  m_PrefabInstance: {fileID: 1185631033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826182647
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7952644d1abcf2b43b5cbf364f169992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 630389266}
+  scoreCanvas: {fileID: 1369220912}
+  spawner: {fileID: 341671147}
 --- !u!4 &1040688614
 Transform:
   m_ObjectHideFlags: 0
@@ -736,6 +744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fbc2b56f4b4cad41b29960ac8b40776, type: 3}
+--- !u!1 &1369220912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4420568018785244674, guid: dc49c544ac07fab4799df520a69aa565, type: 3}
+  m_PrefabInstance: {fileID: 1939350097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1558506098
 GameObject:
   m_ObjectHideFlags: 0

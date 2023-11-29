@@ -5,15 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Game Over UI Object for displaying Game Over Screen")]
+    public GameObject gameOverCanvas;
+    [Header("Score UI Object for displaying Scorre")]
+    public GameObject scoreCanvas;
+    [Header("Spawner Object for spawning objects in game")]
+    public GameObject spawner;
     void Start()
     {
-
+        Time.timeScale = 1;
+        scoreCanvas.SetActive(true);
+        gameOverCanvas.SetActive(false);
+        spawner.SetActive(true);
     }
 
     // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
-
+        gameOverCanvas.SetActive(true);
+        spawner.SetActive(false);
+        Time.timeScale = 0;
     }
 }
