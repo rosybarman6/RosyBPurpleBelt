@@ -12,6 +12,9 @@ public class PlayerControls : MonoBehaviour
     [Header("Default Movement Speed")]
     public float movementSpeed = 10f;
     public float movement = 0f;
+    [Header("Score Text")]
+    public Text scoreText;
+    private float topScore = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,12 @@ public class PlayerControls : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        if (rb.velocity.y > 0 && transform.position.y > topScore)
+        {
+            topScore = transform.position.y;
+        }
+        scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
     }
 
     void FixedUpdate()
