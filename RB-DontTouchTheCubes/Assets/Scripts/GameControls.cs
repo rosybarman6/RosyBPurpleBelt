@@ -11,11 +11,16 @@ public class GameControls: MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+        StartCoroutine(CountTime());
+        timerText = GameObject.Find("Score").GetComponent<Text>();
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator CountTime()
     {
-
+        yield return new WaitForSeconds(1f);
+        timerCount++;
+        timerText.text = "Score: " + timerCount;
+        StartCoroutine(CountTime());
     }
 }
