@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SuperShapes.unity
+    guid: ce8d8c8800c975241b0a809646550ac5
   m_configObjects: {}

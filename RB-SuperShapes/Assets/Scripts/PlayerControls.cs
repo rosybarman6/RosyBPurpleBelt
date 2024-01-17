@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     [Header("Default Movement Speed")]
-    public float moveSpeed = 600f
+    public float moveSpeed = 600f;
         float movement = 0f;
     // Start is called before the first frame update
     void Start()
@@ -24,4 +24,11 @@ public class PlayerControls : MonoBehaviour
     {
         transform.RotateAround(Vector3.zero, Vector3.forward, movement * Time.fixedDeltaTime * -moveSpeed);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Time.timeScale = 0;
+        GameObject.Find("Game Controller").GetComponent<GameController>().GameOver();
+    }
+    
 }
