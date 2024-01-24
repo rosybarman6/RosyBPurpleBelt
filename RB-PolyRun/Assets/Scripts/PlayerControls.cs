@@ -33,4 +33,11 @@ public class PlayerControls : MonoBehaviour
             isGrounded = true;
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+    }
 }
