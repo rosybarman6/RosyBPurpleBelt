@@ -20,6 +20,10 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (transform.position.x < posX)
+        {
+            GameOver();
+        }
         if(Input.GetKey(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * (jumpPower * rb.mass * rb.gravityScale * 20.0f));
@@ -32,12 +36,29 @@ public class PlayerControls : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.collider.tag == "Enemy")
+        {
+            GameOver();
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.tag == "Ground")
         {
             isGrounded = false;
+        }
+    }
+
+    void GameOver()
+    {
+        Time.timeScale = 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
