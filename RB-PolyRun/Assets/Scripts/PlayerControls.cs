@@ -32,6 +32,10 @@ public class PlayerControls : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.tag == "Enemy")
+        {
+            GameOver();
+        }
         if(collision.collider.tag == "Ground")
         {
             isGrounded = true;
@@ -56,7 +60,13 @@ public class PlayerControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+       
         if (collision.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
+        }
+
+        if(collision.tag == "Coin")
         {
             Destroy(collision.gameObject);
         }
