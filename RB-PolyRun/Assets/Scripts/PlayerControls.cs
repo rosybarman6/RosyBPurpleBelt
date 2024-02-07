@@ -32,10 +32,6 @@ public class PlayerControls : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Enemy")
-        {
-            GameOver();
-        }
         if(collision.collider.tag == "Ground")
         {
             isGrounded = true;
@@ -55,18 +51,18 @@ public class PlayerControls : MonoBehaviour
 
     void GameOver()
     {
-        Time.timeScale = 0;
+        GameObject.Find("GameController").GetComponent<GameController>().GameOver();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         if (collision.tag == "Coin")
         {
+            GameObject.Find("GameController").GetComponent<GameController>().IncrementScore();
             Destroy(collision.gameObject);
         }
 
-        if(collision.tag == "Coin")
+        if (collision.tag == "Coin")
         {
             Destroy(collision.gameObject);
         }
