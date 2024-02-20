@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [Header("Cube Object")]
-    public Gameobject currentCube;
+    public GameObject currentCube;
     [Header("Last Cube Object")]
     public GameObject lastCube;
     [Header("Text object")]
@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         {
             return;
         }
-        var time = Mathf.Abs(time.realtimeSinceStartup % 2f - 1f);
+        var time = Mathf.Abs(Time.realtimeSinceStartup % 2f - 1f);
         var pos1 = lastCube.transform.position + Vector3.up * 10f;
         var pos2 = pos1 + ((Level % 2 == 0) ? Vector3.left : Vector3.forward) * 120;
         if (Level % 2 == 0)
@@ -76,4 +76,11 @@ public class GameController : MonoBehaviour
             Newblock();
         }
     }
+
+    IEnumerator X()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("SampleScene");
+    }
+
 }
