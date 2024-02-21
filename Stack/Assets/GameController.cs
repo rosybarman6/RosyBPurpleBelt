@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
         var pos2 = pos1 + ((Level % 2 == 0) ? Vector3.left : Vector3.forward) * 120;
         if (Level % 2 == 0)
         {
-            currentCube.transform.position = Vector2.Lerp(pos2, pos1, time);
+            currentCube.transform.position = Vector3.Lerp(pos2, pos1, time); //The error is on this line
         }
         else
         {
