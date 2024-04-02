@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private Spawner spawner;
-    public GameObject title:
+    public GameObject title;
+    private Vector2 screenBounds;
     void Awake()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Cameera.main.transform.positition.z));
     }
     // Start is called before the first frame update
     void Start()
@@ -20,10 +22,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKewDown)
+        if (Input.anyKeyDown)
         {
             spawner.active = true;
             title.SetActive(false);
+        }
+
+        var nextBomb = GameObjects.FindGameObjectsWithTag("Bomb");
+        foreach (GameObject bombObject in nextBomb)
+        {
+            if (bombObject.transform.position.y < (-screenBounds.y) - 12)
+            {
+                Destroy(bombObject);
+            }
         }
     }
 }
