@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Cameera.main.transform.positition.z));
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
             title.SetActive(false);
         }
 
-        var nextBomb = GameObjects.FindGameObjectsWithTag("Bomb");
+        var nextBomb = GameObject.FindGameObjectsWithTag("Bomb");
         foreach (GameObject bombObject in nextBomb)
         {
             if (bombObject.transform.position.y < (-screenBounds.y) - 12)
