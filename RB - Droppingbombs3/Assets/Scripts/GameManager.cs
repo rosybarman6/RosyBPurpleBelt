@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Reset : MonoBehaviour
-{
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
-}
-
 public class GameManager : MonoBehaviour
 {
     private Spawner spawner;
@@ -67,8 +59,10 @@ public class GameManager : MonoBehaviour
     }
      void OnPlayerKilled()
     {
+        // when player killed
         spawner.active = false;
         gameStarted = false;
+
         splash.SetActive(true);
     }
 }
