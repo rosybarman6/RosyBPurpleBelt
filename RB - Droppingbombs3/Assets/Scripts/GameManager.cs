@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     private bool gameStarted = false;
     public GameObject splash;
+    public GameObject gameOverText;
     void Awake()
     {
         spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         spawner.active = false;
         title.SetActive(true);
         splash.SetActive(true);
+        gameOverText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
         spawner.active = true;
         title.SetActive(false);
         splash.SetActive(false);
+        gameOverText.SetActive(false);
         player = Instantiate(playerPrefab, new Vector3(0, 0, 0), playerPrefab.transform.rotation);
         gameStarted = true;
     }
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
         spawner.active = false;
         gameStarted = false;
         splash.SetActive(true);
+        gameOverText.SetActive(true);
     }
 
 }
