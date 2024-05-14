@@ -54,8 +54,12 @@ public class GameManager : MonoBehaviour
         var nextBomb = GameObject.FindGameObjectsWithTag("Bomb");
         foreach (GameObject bombObject in nextBomb)
         {
-            if (bombObject.transform.position.y < (-screenBounds.y) - 12)
+            if (!gameStarted)
             {
+                Destroy(bombObject);
+            } else if (bombObject.transform.position.y < (-screenBounds.y) - 12)
+            {
+                scoreSystem.GetComponent<Score>().AddScore(pointsWorth);
                 Destroy(bombObject);
             }
         }
