@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject scoreSystem;
     public Text scoreText;
     public int pointsWorth = 1;
+
     private int score;
     void Awake()
     {
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
             if (!gameStarted)
             {
                 Destroy(bombObject);
-            } else if (bomb0bject.transform.position.y < (-screenBounds.y) && gameStarted)
+            } else if (bombObject.transform.position.y < (-screenBounds.y) && gameStarted)
             {
                 scoreSystem.GetComponent<Score>().AddScore(pointsWorth);
                 Destroy(bombObject);
