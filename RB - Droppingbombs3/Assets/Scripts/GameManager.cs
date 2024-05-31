@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject scoreSystem;
     public Text scoreText;
     public int pointsWorth = 1;
+    private bool smokeCleared = true;
 
     private int score;
     void Awake()
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+                smokeCleared = false;
                 ResetGame();
             }
         }
@@ -86,8 +88,14 @@ public class GameManager : MonoBehaviour
         gameStarted = false;
         splash.SetActive(true);
         gameOverText.SetActive(true);
+        invoke("SplashScreen", 2f);
     }
 
+    void SplashScreen()
+    {
+        smokeCleared = true;
+        splash.SetActive(true);
+    }
 }
 
 

@@ -1415,6 +1415,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2064923818}
+--- !u!114 &2064923824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064923813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc2ad77b1cd661409c1042971f25cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 7952807807324324154, guid: e00547d2e2b01b54ebef5cc8cf0c7b56,
+    type: 3}
 --- !u!1001 &4774928252143524237
 PrefabInstance:
   m_ObjectHideFlags: 0
