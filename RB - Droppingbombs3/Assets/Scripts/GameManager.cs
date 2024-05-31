@@ -86,9 +86,9 @@ public class GameManager : MonoBehaviour
     {
         spawner.active = false;
         gameStarted = false;
-        splash.SetActive(true);
-        gameOverText.SetActive(true);
-        invoke("SplashScreen", 2f);
+        
+       
+        Invoke("SplashScreen", 2f);
     }
 
     void SplashScreen()
