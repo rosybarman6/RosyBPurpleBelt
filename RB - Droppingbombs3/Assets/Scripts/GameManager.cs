@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log(this.gameObject);
         spawner.active = false;
         title.SetActive(true);
         splash.SetActive(true);
@@ -38,9 +39,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("smoke " + smokeCleared);
+
         if (!gameStarted)
         {
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown && smokeCleared)
             {
                 smokeCleared = false;
                 ResetGame();
@@ -70,6 +73,7 @@ public class GameManager : MonoBehaviour
 
     void ResetGame()
     {
+        Debug.Log("reset game");
         spawner.active = true;
         title.SetActive(false);
         splash.SetActive(false);
@@ -93,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     void SplashScreen()
     {
+        Debug.Log("2 secod timer");
         smokeCleared = true;
         splash.SetActive(true);
     }

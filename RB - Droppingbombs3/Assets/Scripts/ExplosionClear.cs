@@ -16,7 +16,7 @@ public class ExplosionClear : MonoBehaviour
     {
         if (!particleSmoke.IsAlive())
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

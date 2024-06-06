@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/RB-DroppingBombs4.unity
+    guid: e81915cb73c91e34d96f29019e7a1687
   m_configObjects: {}
